@@ -1,20 +1,25 @@
 package co.edu.unbosque.controller;
+
+import co.edu.unbosque.model.ColaReales;
+import co.edu.unbosque.model.PilaEnteros;
 import co.edu.unbosque.view.ViewConsole;
-import co.edu.unbosque.model.pilasColas;
 
 public class Controller {
 
     private ViewConsole v;
-    private pilasColas pc;
+    private ColaReales cola;
+    private PilaEnteros pila;
+    int numerof;
 
-    public Controller(){
-        v = new ViewConsole();
-        pc = new pilasColas();
-        ejecucion();
+    public Controller (){
+        
+        
+       
+        	v = new ViewConsole();
+        	cola = new ColaReales();
+        	pila = new PilaEnteros(tamano);
+		
     }
+    
 
-    public void ejecucion(){
-
-        v.mostrarInformacion("prueba numero 1");
-    }
 }

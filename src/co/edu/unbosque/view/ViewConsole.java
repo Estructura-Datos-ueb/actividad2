@@ -1,6 +1,5 @@
 package co.edu.unbosque.view;
 
-import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -9,7 +8,7 @@ public class ViewConsole {
     private String tamano;
 
     public ViewConsole() {
-
+        tamano =  JOptionPane.showInputDialog("Porfavor ingrese el tamaño de la matriz");
     }
     public void ingresarinformacion(String mensaje){
         tamano =  JOptionPane.showInputDialog(mensaje);
@@ -18,13 +17,13 @@ public class ViewConsole {
     public void mostrarInformacion( String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje);
     }
-
+    
     public Integer mostrarOpcion(String mensaje) {
-        return JOptionPane.showConfirmDialog(null, mensaje);
+    	return JOptionPane.showConfirmDialog(null, mensaje);
     }
 
     public String leerDato(String mensaje) {
-        String opcion = "";
+    	String opcion = "";
         opcion = JOptionPane.showInputDialog(mensaje);
 
         return opcion;
