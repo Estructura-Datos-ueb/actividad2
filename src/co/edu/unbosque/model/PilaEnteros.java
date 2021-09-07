@@ -36,8 +36,6 @@ public class PilaEnteros implements  IPilaDeEnteros {
 
 
 	}
-	
-
 
 
 	@Override
@@ -54,9 +52,6 @@ public class PilaEnteros implements  IPilaDeEnteros {
        
         return pila[top--];
 	}
-
-
-	
 
 
 	@Override

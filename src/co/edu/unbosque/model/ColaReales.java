@@ -34,9 +34,8 @@ public class ColaReales implements IColaReales {
         	 JOptionPane.showMessageDialog(null,"Error: la Queue esta llena!!! : Overflow\nCerrando Programa...");
              System.exit(1);
         }
- 
         JOptionPane.showMessageDialog(null,"Insertando " + elemento);
- 
+
         rear = (rear + 1) % capacity;
         cola[rear] = elemento;
         count++;
@@ -72,9 +71,6 @@ public class ColaReales implements IColaReales {
 	        }
 	        return cola[front];
 	}
-
-
-
 
 
 	@Override
