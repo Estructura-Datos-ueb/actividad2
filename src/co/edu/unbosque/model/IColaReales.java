@@ -8,7 +8,6 @@ public interface IColaReales {
 	
 	public double getFirst();
 	
-	public int getTop();
 	
 	public int getNumberOfElements();
 	

@@ -4,8 +4,6 @@ public interface IPilaDeEnteros {
 	
 	public void push(int elemento);
 	
-	public int push();
-	
 	public int pop();
 	
 	public int getTop();

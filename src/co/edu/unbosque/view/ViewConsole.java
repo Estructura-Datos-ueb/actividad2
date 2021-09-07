@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 
 public class ViewConsole {
 
-    private String tamano;
 
     public ViewConsole() {
-        tamano =  JOptionPane.showInputDialog("Porfavor ingrese el tamaño de la matriz");
     }
-    public void ingresarinformacion(String mensaje){
-        tamano =  JOptionPane.showInputDialog(mensaje);
+    public String mostrarLista(String mensaje, Object[] opciones) {
+    	Object o = JOptionPane.showInputDialog(null,mensaje, "Elegir",JOptionPane.QUESTION_MESSAGE,null,opciones, opciones[0]);
+    	return  o.toString();
+
     }
 
     public void mostrarInformacion( String mensaje) {
@@ -19,7 +19,15 @@ public class ViewConsole {
     }
     
     public Integer mostrarOpcion(String mensaje) {
-    	return JOptionPane.showConfirmDialog(null, mensaje);
+    	String [] options = {  "Pila de Enteros", "Cola de Reales"};
+    	return JOptionPane.showOptionDialog(null,
+    			mensaje,
+    			"Tipo de Generación de numeros",
+    			JOptionPane.YES_NO_OPTION,
+    			JOptionPane.QUESTION_MESSAGE,
+    			null,     //do not use a custom Icon
+    			options,  //the titles of buttons
+    			options[0]); //default button title
     }
 
     public String leerDato(String mensaje) {
@@ -28,15 +36,6 @@ public class ViewConsole {
 
         return opcion;
     }
-
-    public String getTamano() {
-        return tamano;
-    }
-
-    public void setTamano(String tamano) {
-        this.tamano = tamano;
-    }
-
 
 
 
