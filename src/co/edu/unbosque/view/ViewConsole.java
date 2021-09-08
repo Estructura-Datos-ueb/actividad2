@@ -22,7 +22,7 @@ public class ViewConsole {
     	String [] options = {  "Pila de Enteros", "Cola de Reales"};
     	return JOptionPane.showOptionDialog(null,
     			mensaje,
-    			"Tipo de Generación de numeros",
+    			"Tipo de Generacion de numeros",
     			JOptionPane.YES_NO_OPTION,
     			JOptionPane.QUESTION_MESSAGE,
     			null,     //do not use a custom Icon

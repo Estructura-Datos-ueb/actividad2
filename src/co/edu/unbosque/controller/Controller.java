@@ -18,11 +18,11 @@ public class Controller {
     
     public void start() {
     	try {
-    		int opcion = v.mostrarOpcion("¿Que tipo de Estructura desea Crear?");
+    		int opcion = v.mostrarOpcion("Â¿Que tipo de Estructura desea Crear?");
         	
         	if(opcion == 0) {
         		try {
-        			int tamano = Integer.parseInt(v.leerDato("Ingrese el tamaño de la pila que desea crear"));
+        			int tamano = Integer.parseInt(v.leerDato("Ingrese el tamano de la pila que desea crear"));
         			pila = new PilaEnteros(tamano);
         			showMenu("pila");
     			} catch (Exception e) {
@@ -34,7 +34,7 @@ public class Controller {
         		
         	}else {
         		try {
-        			int tamano = Integer.parseInt(v.leerDato("Ingrese el tamaño de la Cola que desea crear"));
+        			int tamano = Integer.parseInt(v.leerDato("Ingrese el tamano de la Cola que desea crear"));
         			cola = new ColaReales(tamano);
         			showMenu("cola");
     			} catch (Exception e) {
@@ -55,7 +55,7 @@ public class Controller {
     		
     		try {
     			String[] o = {"push", "pop", "getTop", "GetNumberOfElements", "isFull", "IsEmpty" , "PrintStack"};
-        		String metodo = v.mostrarLista("¿Que metodo desea utilizar?", o);
+        		String metodo = v.mostrarLista("Â¿Que metodo desea utilizar?", o);
     			if(metodo.equalsIgnoreCase("push")) {
         			int num =Integer.parseInt( v.leerDato("Ingrese El numero que desea insertar"));
         			pila.push(num);
@@ -109,7 +109,7 @@ public class Controller {
     		
     		try {
     			String[] o = {"Queue", "DeQueue", "getFirst", "GetNumberOfElements", "isFull", "IsEmpty", "PrintQueue"};
-        		String metodo = v.mostrarLista("¿Que metodo desea utilizar?", o);
+        		String metodo = v.mostrarLista("Â¿Que metodo desea utilizar?", o);
     			if(metodo.equalsIgnoreCase("Queue")) {
         			Double num =Double.parseDouble( v.leerDato("Ingrese El numero que desea insertar"));
         			cola.queue(num);
