@@ -66,7 +66,7 @@ public class ColaReales implements IColaReales {
 	public double getFirst() {
 		 if (isEmpty())
 	        {
-	            System.out.println("La Queue esta vacia\n "
+			 JOptionPane.showMessageDialog(null,"La Queue esta vacia\n "
 	            		+ "Cerrando Programa........");
 	            System.exit(1);
 	        }
