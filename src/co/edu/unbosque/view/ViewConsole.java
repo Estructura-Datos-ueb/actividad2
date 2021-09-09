@@ -2,6 +2,7 @@ package co.edu.unbosque.view;
 
 
 import javax.swing.JOptionPane;
+import java.awt.*;
 
 public class ViewConsole {
 
@@ -9,8 +10,14 @@ public class ViewConsole {
     public ViewConsole() {
     }
     public String mostrarLista(String mensaje, Object[] opciones) {
-    	Object o = JOptionPane.showInputDialog(null,mensaje, "Elegir",JOptionPane.QUESTION_MESSAGE,null,opciones, opciones[0]);
-    	return  o.toString();
+        String oString=null;
+        try{
+            Object o = JOptionPane.showInputDialog(null,mensaje, "Elegir",JOptionPane.QUESTION_MESSAGE,null,opciones, opciones[0]);
+            oString= o.toString();
+        } catch (Exception e) {
+            System.exit(1);
+        }
+        return oString;
 
     }
 

@@ -16,8 +16,8 @@ public class ColaReales implements IColaReales {
 
 
     public ColaReales (int tamano) {
-    	cola = new Double[capacity];
     	capacity = tamano;
+		cola = new Double[capacity];
         front = 0;
         rear = -1;
         count = 0;
@@ -31,14 +31,15 @@ public class ColaReales implements IColaReales {
 		// check for queue overflow
         if (isFull())
         {
-        	 JOptionPane.showMessageDialog(null,"Error: la Queue esta llena!!! : Overflow\nCerrando Programa...");
-             System.exit(1);
-        }
-        JOptionPane.showMessageDialog(null,"Insertando " + elemento);
+        	 JOptionPane.showMessageDialog(null,"Error: la Queue esta llena!!! : Overflow");
 
-        rear = (rear + 1) % capacity;
-        cola[rear] = elemento;
-        count++;
+        }else{
+			JOptionPane.showMessageDialog(null,"Insertando " + elemento);
+			rear = (rear + 1) % capacity;
+			cola[rear] = elemento;
+			count++;
+		}
+
 		
 	}
 
@@ -47,29 +48,32 @@ public class ColaReales implements IColaReales {
 	public double dequeue() {
 		// TODO Auto-generated method stub
 		// check for queue underflow
+		double colaFront=0;
         if (isEmpty())
         {
-        	JOptionPane.showMessageDialog(null,"Error: La Queue esta vacia!!! : Underflow \nCerrando Programa...");
-            System.exit(1);
-        }
- 
-        JOptionPane.showMessageDialog(null,"Quitando " + cola[front]);
- 
-        front = (front + 1) % capacity;
-        count--;
-        return cola[front];
+        	JOptionPane.showMessageDialog(null,"Error: La Queue esta vacia!!! : Underflow");
+        }else{
+			JOptionPane.showMessageDialog(null,"Quitando " + cola[front]);
+			front = (front + 1) % capacity;
+			count--;
+			colaFront= cola[front];
+		}
+		return colaFront;
+
 	}
 
 
 	@Override
 	public double getFirst() {
+    	double colaFront=0;
 		 if (isEmpty())
 	        {
-			 JOptionPane.showMessageDialog(null,"La Queue esta vacia\n "
-	            		+ "Cerrando Programa........");
-	            System.exit(1);
-	        }
-	        return cola[front];
+			 JOptionPane.showMessageDialog(null,"La Queue esta vacia");
+
+	        }else{
+			 colaFront=cola[front];
+		 }
+	        return colaFront;
 	}
 
 

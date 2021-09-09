@@ -57,16 +57,31 @@ public class Controller {
     			String[] o = {"push", "pop", "getTop", "GetNumberOfElements", "isFull", "IsEmpty" , "PrintStack"};
         		String metodo = v.mostrarLista("¿Que metodo desea utilizar?", o);
     			if(metodo.equalsIgnoreCase("push")) {
-        			int num =Integer.parseInt( v.leerDato("Ingrese El numero que desea insertar"));
-        			pila.push(num);
-        			showMenu("pila");
+    				try{
+						int num =Integer.parseInt( v.leerDato("Ingrese El numero que desea insertar"));
+						pila.push(num);
+						showMenu("pila");
+					}catch (NumberFormatException e){
+    					v.mostrarInformacion("Por favor ingrese la infomacion correctamenta");
+    					showMenu(type);
+					}
+
         		}else if(metodo.equalsIgnoreCase("pop")) {
-        			v.mostrarInformacion("Se ha borrado " + pila.pop() + " de la pila");
+    				if(pila.isEmpty()){
+						v.mostrarInformacion("No se pudo borrar ningun elemento");
+					}else {
+						v.mostrarInformacion("Se ha borrado " + pila.pop() + " de la pila");
+					}
         			showMenu("pila");
         			
         		}else if(metodo.equalsIgnoreCase("getTop")) {
-        			v.mostrarInformacion("Cima de la pila: " + pila.getTop());
-        			showMenu("pila");
+    				if(pila.getTop()!=(-1)){
+						v.mostrarInformacion("Cima de la pila: " + pila.getTop());
+						showMenu("pila");
+					}else{
+						v.mostrarInformacion("No hay ningun elemento en Top");
+						showMenu("pila");
+					}
         			
         		}else if(metodo.equalsIgnoreCase("GetNumberOfElements")) {
         			v.mostrarInformacion("Numero de Elementos en la pila: " + pila.getNumberOfElements());
@@ -103,24 +118,38 @@ public class Controller {
 				System.exit(0);
 			}
     		
-    		
     	}else {
-    		
-    		
+			String[] o = {"Queue", "DeQueue", "getFirst", "GetNumberOfElements", "isFull", "IsEmpty", "PrintQueue"};
     		try {
-    			String[] o = {"Queue", "DeQueue", "getFirst", "GetNumberOfElements", "isFull", "IsEmpty", "PrintQueue"};
+
         		String metodo = v.mostrarLista("¿Que metodo desea utilizar?", o);
     			if(metodo.equalsIgnoreCase("Queue")) {
-        			Double num =Double.parseDouble( v.leerDato("Ingrese El numero que desea insertar"));
-        			cola.queue(num);
-        			showMenu("cola");
+    				try{
+						Double num =Double.parseDouble( v.leerDato("Ingrese El numero que desea insertar"));
+						cola.queue(num);showMenu("cola");
+					}catch (NumberFormatException e){
+						v.mostrarInformacion("Por favor ingrese la infomacion correctamenta");
+						showMenu(type);
+				}
+
         		}else if(metodo.equalsIgnoreCase("DeQueue")) {
-        			v.mostrarInformacion("Se ha borrado " + cola.dequeue() + " de la pila");
-        			showMenu("cola");
+					if(cola.dequeue()==0){
+						v.mostrarInformacion("No se pudo borrar ningun elemento");
+						showMenu("cola");
+					}else{
+						v.mostrarInformacion("Se ha borrado " + cola.dequeue() + " de la pila");
+						showMenu("cola");
+					}
         			
         		}else if(metodo.equalsIgnoreCase("getFirst")) {
-        			v.mostrarInformacion("Primer Elemento de la Cola: " + cola.getFirst());
-        			showMenu("cola");
+					if(cola.dequeue()!=0){
+						v.mostrarInformacion("Primer Elemento de la Cola: " + cola.getFirst());
+						showMenu("cola");
+					}else {
+						v.mostrarInformacion("No hay ningun elemento en Top");
+						showMenu("cola");
+					}
+
         			
         		}else if(metodo.equalsIgnoreCase("GetNumberOfElements")) {
         			v.mostrarInformacion("Numero de Elementos en cola: " + cola.getNumberOfElements());

@@ -27,46 +27,41 @@ public class PilaEnteros implements  IPilaDeEnteros {
 
         if (isFull())
         {
-            JOptionPane.showMessageDialog(null,"El Stack esta lleno!!! : Overflow\\nPrograma Terminado");
-            System.exit(1);
-        }
- 
-        JOptionPane.showMessageDialog(null,"Insertando " + elemento);
-        pila[++top] = elemento;
-
+            JOptionPane.showMessageDialog(null,"El Stack esta lleno!!! : Overflow ");
+        }else {
+			JOptionPane.showMessageDialog(null,"Insertando " + elemento);
+			pila[++top] = elemento;
+		}
 
 	}
 
 
 	@Override
 	public int pop() {
+    	int pilaTop=0;
 		// TODO Auto-generated method stub
         if (isEmpty())
         {
-        	 JOptionPane.showMessageDialog(null,"El Stack esta vacio!!! : Underflow\nPrograma Terminado");
-            System.exit(1);
-        }
-
-        JOptionPane.showMessageDialog(null,"Quitando " + getTop());
- 
-       
-        return pila[top--];
+        	 JOptionPane.showMessageDialog(null,"El Stack esta vacio!!! : Underflow");
+        }else{
+			JOptionPane.showMessageDialog(null,"Quitando " + getTop());
+			pilaTop=pila[top--];
+		}
+        return pilaTop;
 	}
-
 
 	@Override
 	public int getTop() {
 		// TODO Auto-generated method stub
 		 if (!isEmpty()) {
 	            return pila[top];
+	        }else {
+	        	 JOptionPane.showMessageDialog(null,"El Stack esta vacio!!! ");
 	        }
-	        else {
-	        	 JOptionPane.showMessageDialog(null,"El Stack esta vacio!!! \nPrograma Terminado");
-	            System.exit(1);
-	        }
-	 
-	        return -1;
-	}
+			return -1;
+    }
+
+
 
 
 	@Override
